@@ -7,13 +7,19 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { SelectCreditComponent } from './select-credit/select-credit.component';
+import { ConsumerCreditComponent } from './consumer-credit/consumer-credit.component';
+import { MortgageCreditComponent } from './mortgage-credit/mortgage-credit.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    SelectCreditComponent,
+    ConsumerCreditComponent,
+    MortgageCreditComponent
   ],
   imports: [
     BrowserModule,
