@@ -1,8 +1,9 @@
 <div fxFill="true">
   <div fxLayout="row" fxFill="true" fxFlex="30"></div>
 
-  <div fxLayout="row" fxFlex fxFill="true" fxLayoutAlign="space-evenly center">
-    <form fxFlex="50">
+  <div fxLayout="row" fxFlex fxFill="true" fxLayoutAlign="space-evenly center">    
+      <form fxFlex="50" [formGroup]="form" (ngSubmit)="simulate()">
+
       <div fxLayout="column" fxFlex>
         <div fxLayout="row" fxLayoutAlign="start center">          
           <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
@@ -16,27 +17,27 @@
             matInput
             matAutosizeMinRows="200"
             placeholder="Ingrese su nombre"
-            value=""
+            formControlName="name"
           />
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Email</mat-label>
-          <input type="email" matInput type="email" placeholder="me@email.com" value="" />
+          <input type="email" matInput type="email" placeholder="me@email.com" formControlName="email" />
         </mat-form-field>
 
         <mat-form-field appearance="fill">
           <mat-label>Monto a solicitar</mat-label>
-          <input type="number" matInput placeholder="( $100.000 - $5.000.000 )" value="" />
+          <input type="number" matInput placeholder="( $100.000 - $5.000.000 )" formControlName="amount"  />
         </mat-form-field>
 
         <mat-form-field appearance="fill">
           <mat-label>Número de cuotas</mat-label>
-          <input type="number" matInput placeholder="( 3 - 36 )" value="" />
+          <input type="number" matInput placeholder="( 3 - 36 )" formControlName="quotas"  />
         </mat-form-field>
 
         <mat-form-field appearance="fill">
           <mat-label>Ingresos mensuales percibidos </mat-label>
-          <input type="number" matInput placeholder="( $300.000 -  +$1.000.000) " value="" />
+          <input type="number" matInput placeholder="( $300.000 -  +$1.000.000) " formControlName="incomes"  />
         </mat-form-field>
         <div fxLayout="row" fxLayoutAlign="space-between start">
           <p style="font-family: Roboto; font-size: small; text-align: justify; margin-bottom: 30px;">
@@ -47,7 +48,7 @@
         </div>  
         <div fxLayout="row" fxFill="true" fxLayoutAlign="space-between start">
           <a mat-raised-button routerLink="/select">Regresar</a>
-          <button mat-raised-button color="primary">Evaluar</button>
+          <button (ngSubmit)="simulate()" type="submit" mat-raised-button color="primary">Evaluar</button>
         </div>
         
       </div>

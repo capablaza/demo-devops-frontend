@@ -10,11 +10,12 @@ import { MaterialModule } from './material/material.module';
 import { SelectCreditComponent } from './select-credit/select-credit.component';
 import { ConsumerCreditComponent } from './consumer-credit/consumer-credit.component';
 import { MortgageCreditComponent } from './mortgage-credit/mortgage-credit.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent,    
     WelcomeComponent,
     PagenotfoundComponent,
     SelectCreditComponent,
@@ -25,7 +26,10 @@ import { MortgageCreditComponent } from './mortgage-credit/mortgage-credit.compo
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,        
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
